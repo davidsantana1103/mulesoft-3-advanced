@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.mulesoft.training.HelloMavenTest" time="9.655" tests="1" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.mulesoft.training.HelloMavenTest" time="11.743" tests="2" errors="0" skipped="0" failures="1">
   <properties>
     <property name="skipMunitTests" value="true"/>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
@@ -63,5 +63,216 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase name="mavenFlowReturnsHelloMaven" classname="com.mulesoft.training.HelloMavenTest" time="8.547"/>
+  <testcase name="mavenFlowReturnsHelloMaven" classname="com.mulesoft.training.HelloMavenTest" time="8.965"/>
+  <testcase name="retrieveFlightsAddsAppropriateHeader" classname="com.mulesoft.training.HelloMavenTest" time="1.798">
+    <failure message="expected:&lt;application/json&gt; but was:&lt;null&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: expected:<application/json> but was:<null>
+	at com.mulesoft.training.HelloMavenTest.retrieveFlightsAddsAppropriateHeader(HelloMavenTest.java:25)
+]]></failure>
+    <system-out><![CDATA[
+================================================================================
+= Testing: retrieveFlightsAddsAppropriateHeader                                =
+================================================================================
+INFO  2018-08-21 13:55:28,227 [Time-limited test] org.mule.tck.junit4.AbstractMuleContextTestCase: Using working directory for test: C:\Users\DAVSAN~1\AppData\Local\Temp\junit725130954754429707
+INFO  2018-08-21 13:55:28,234 [Time-limited test] org.mule.lifecycle.AbstractLifecycleManager: Initialising RegistryBroker
+INFO  2018-08-21 13:55:28,243 [Time-limited test] org.mule.config.spring.MuleArtifactContext: Refreshing org.mule.config.spring.MuleArtifactContext@434218e4: startup date [Tue Aug 21 13:55:28 EDT 2018]; root of context hierarchy
+INFO  2018-08-21 13:55:28,583 [Time-limited test] org.mule.config.spring.processors.NoDevkitInjectorProcessor: JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+WARN  2018-08-21 13:55:28,624 [Time-limited test] org.mule.expression.DefaultExpressionManager: Expression string is not an expression.  Use isExpression(String) to validate first
+WARN  2018-08-21 13:55:28,625 [Time-limited test] org.mule.expression.DefaultExpressionManager: Expression string is not an expression.  Use isExpression(String) to validate first
+INFO  2018-08-21 13:55:28,798 [Time-limited test] org.mule.util.journal.TransactionJournal: Using files for tx logs C:\Users\davsantana\AppData\Local\Temp\junit725130954754429707\queue-tx-log\tx1.log and C:\Users\davsantana\AppData\Local\Temp\junit725130954754429707\queue-tx-log\tx2.log
+INFO  2018-08-21 13:55:28,802 [Time-limited test] org.mule.util.journal.TransactionJournal: Using files for tx logs C:\Users\davsantana\AppData\Local\Temp\junit725130954754429707\queue-xa-tx-log\tx1.log and C:\Users\davsantana\AppData\Local\Temp\junit725130954754429707\queue-xa-tx-log\tx2.log
+INFO  2018-08-21 13:55:28,808 [Time-limited test] org.mule.lifecycle.AbstractLifecycleManager: Initialising connector: Active_MQ
+INFO  2018-08-21 13:55:28,823 [Time-limited test] org.mule.lifecycle.AbstractLifecycleManager: Initialising model: _muleSystemModel
+INFO  2018-08-21 13:55:28,826 [Time-limited test] org.mule.construct.FlowConstructLifecycleManager: Initialising flow: mavenFlow
+INFO  2018-08-21 13:55:28,826 [Time-limited test] org.mule.exception.DefaultMessagingExceptionStrategy: Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@677e41c3
+INFO  2018-08-21 13:55:28,831 [Time-limited test] org.mule.processor.SedaStageLifecycleManager: Initialising service: mavenFlow.stage1
+INFO  2018-08-21 13:55:28,831 [Time-limited test] org.mule.construct.FlowConstructLifecycleManager: Initialising flow: retrieveFlights
+INFO  2018-08-21 13:55:28,832 [Time-limited test] org.mule.exception.DefaultMessagingExceptionStrategy: Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@449c880c
+INFO  2018-08-21 13:55:28,840 [Time-limited test] org.mule.processor.SedaStageLifecycleManager: Initialising service: retrieveFlights.stage1
+INFO  2018-08-21 13:55:28,840 [Time-limited test] org.mule.construct.FlowConstructLifecycleManager: Initialising flow: maven-projectFlow
+INFO  2018-08-21 13:55:28,841 [Time-limited test] org.mule.exception.DefaultMessagingExceptionStrategy: Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@4e1b251c
+INFO  2018-08-21 13:55:28,844 [Time-limited test] org.mule.processor.SedaStageLifecycleManager: Initialising service: maven-projectFlow.stage1
+INFO  2018-08-21 13:55:28,859 [Time-limited test] org.mule.config.spring.SpringXmlConfigurationBuilder: Configured Mule using "org.mule.config.spring.SpringXmlConfigurationBuilder" with configuration resource(s): "[ConfigResource{resourceName='maven-project.xml'}]"
+INFO  2018-08-21 13:55:28,863 [Time-limited test] org.mule.util.queue.QueueXaResourceManager: Starting ResourceManager
+INFO  2018-08-21 13:55:28,863 [Time-limited test] org.mule.util.queue.QueueXaResourceManager: Started ResourceManager
+INFO  2018-08-21 13:55:28,893 [Time-limited test] org.mule.module.http.internal.listener.DefaultHttpListenerConfig: Listening for requests on http://0.0.0.0:8082
+WARN  2018-08-21 13:55:28,991 [Time-limited test] org.apache.activemq.broker.BrokerService: Store limit is 102400 mb (current store usage is 0 mb). The data directory: C:\Users\davsantana\git_repos\mulesoft-3-advanced\maven-project\activemq-data\localhost\KahaDB only has 101211 mb of usable space. - resetting to maximum available disk space: 101211 mb
+INFO  2018-08-21 13:55:29,003 [Time-limited test] org.mule.transport.jms.activemq.ActiveMQJmsConnector: Connected: ActiveMQJmsConnector
+{
+  name=Active_MQ
+  lifecycle=initialise
+  this=4e4ef2ec
+  numberOfConcurrentTransactedReceivers=4
+  createMultipleTransactedReceivers=true
+  connected=true
+  supportedProtocols=[jms]
+  serviceOverrides=<none>
+}
+
+INFO  2018-08-21 13:55:29,004 [Time-limited test] org.mule.transport.jms.activemq.ActiveMQJmsConnector: Starting: ActiveMQJmsConnector
+{
+  name=Active_MQ
+  lifecycle=initialise
+  this=4e4ef2ec
+  numberOfConcurrentTransactedReceivers=4
+  createMultipleTransactedReceivers=true
+  connected=true
+  supportedProtocols=[jms]
+  serviceOverrides=<none>
+}
+
+INFO  2018-08-21 13:55:29,004 [Time-limited test] org.mule.lifecycle.AbstractLifecycleManager: Starting connector: Active_MQ
+INFO  2018-08-21 13:55:29,008 [Time-limited test] org.mule.lifecycle.AbstractLifecycleManager: Starting model: _muleSystemModel
+INFO  2018-08-21 13:55:29,009 [Time-limited test] org.mule.construct.FlowConstructLifecycleManager: Starting flow: mavenFlow
+INFO  2018-08-21 13:55:29,009 [Time-limited test] org.mule.processor.SedaStageLifecycleManager: Starting service: mavenFlow.stage1
+INFO  2018-08-21 13:55:29,015 [Time-limited test] org.mule.construct.FlowConstructLifecycleManager: Starting flow: retrieveFlights
+INFO  2018-08-21 13:55:29,015 [Time-limited test] org.mule.processor.SedaStageLifecycleManager: Starting service: retrieveFlights.stage1
+INFO  2018-08-21 13:55:29,017 [Time-limited test] org.mule.construct.FlowConstructLifecycleManager: Starting flow: maven-projectFlow
+INFO  2018-08-21 13:55:29,017 [Time-limited test] org.mule.processor.SedaStageLifecycleManager: Starting service: maven-projectFlow.stage1
+INFO  2018-08-21 13:55:29,030 [Time-limited test] org.mule.transport.jms.activemq.ActiveMQJmsConnector: Registering listener: maven-projectFlow on endpointUri: jms://flights
+INFO  2018-08-21 13:55:29,033 [Time-limited test] org.mule.transport.service.DefaultTransportServiceDescriptor: Loading default inbound transformer: org.mule.transport.jms.transformers.JMSMessageToObject
+INFO  2018-08-21 13:55:29,034 [Time-limited test] org.mule.transport.service.DefaultTransportServiceDescriptor: Loading default response transformer: org.mule.transport.jms.transformers.ObjectToJMSMessage
+INFO  2018-08-21 13:55:29,034 [Time-limited test] org.mule.lifecycle.AbstractLifecycleManager: Initialising: 'null'. Object is: MultiConsumerJmsMessageReceiver
+INFO  2018-08-21 13:55:29,037 [Time-limited test] org.mule.transport.jms.MultiConsumerJmsMessageReceiver: Connecting clusterizable message receiver
+INFO  2018-08-21 13:55:29,058 [Time-limited test] org.mule.transport.jms.MultiConsumerJmsMessageReceiver: Endpoint jms://flights has been successfully reconnected.
+INFO  2018-08-21 13:55:29,058 [Time-limited test] org.mule.lifecycle.AbstractLifecycleManager: Starting: 'null'. Object is: MultiConsumerJmsMessageReceiver
+INFO  2018-08-21 13:55:29,058 [Time-limited test] org.mule.transport.jms.MultiConsumerJmsMessageReceiver: Starting clusterizable message receiver
+INFO  2018-08-21 13:55:29,065 [Time-limited test] org.mule.DefaultMuleContext: 
+**********************************************************************
+* Mule Runtime and Integration Platform                              *
+* Version: 3.9.1 Build: 6e0f86dc                                     *
+* MuleSoft, Inc.                                                     *
+* For more information go to http://www.mulesoft.org                 *
+*                                                                    *
+* Server started: 8/21/18 1:55 PM                                    *
+* Server ID: 63624b30-a56b-11e8-940a-f8633f3fa934                    *
+* JDK: 1.8.0_181 (mixed mode)                                        *
+* OS encoding: Cp1252, Mule encoding: UTF-8                          *
+* OS: Windows 10 -  (10.0, amd64)                                    *
+* Host: CAGMAW170605 (192.168.56.1)                                  *
+*                                                                    *
+* Agents Running: None                                               *
+**********************************************************************
+WARN  2018-08-21 13:55:29,068 [Time-limited test] org.mule.model.seda.SedaModel: The <model> element is deprecated in Mule 3.4 and will be removed in Mule 4.0.  Flows do not need to be configured inside a <model> element. 
+INFO  2018-08-21 13:55:29,068 [Time-limited test] org.mule.lifecycle.AbstractLifecycleManager: Initialising model: main
+INFO  2018-08-21 13:55:29,068 [Time-limited test] org.mule.lifecycle.AbstractLifecycleManager: Starting model: main
+WARN  2018-08-21 13:55:29,071 [Time-limited test] org.mule.model.seda.SedaService: Services (SedaService or any custom implementation) are deprecated in Mule 3.4 and will be removed in Mule 4.0. 
+INFO  2018-08-21 13:55:29,071 [Time-limited test] org.mule.service.ServiceLifecycleManager: Initialising service: appleService
+INFO  2018-08-21 13:55:29,078 [Time-limited test] org.mule.exception.DefaultMessagingExceptionStrategy: Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@480436a4
+INFO  2018-08-21 13:55:29,078 [Time-limited test] org.mule.component.ComponentLifecycleManager: Initialising component: component.103699788
+INFO  2018-08-21 13:55:29,078 [Time-limited test] org.mule.processor.SedaStageLifecycleManager: Initialising service: appleService
+INFO  2018-08-21 13:55:29,080 [Time-limited test] org.mule.service.ServiceLifecycleManager: Starting service: appleService
+INFO  2018-08-21 13:55:29,080 [Time-limited test] org.mule.component.ComponentLifecycleManager: Starting component: component.103699788
+INFO  2018-08-21 13:55:29,081 [Time-limited test] org.mule.processor.SedaStageLifecycleManager: Starting service: appleService
+INFO  2018-08-21 13:55:29,087 [Time-limited test] org.mule.lifecycle.AbstractLifecycleManager: Initialising connector: testConnector
+INFO  2018-08-21 13:55:29,115 [Time-limited test] org.mule.tck.testmodels.mule.TestConnector: Connected: TestConnector
+{
+  name=testConnector
+  lifecycle=initialise
+  this=3460855e
+  numberOfConcurrentTransactedReceivers=4
+  createMultipleTransactedReceivers=true
+  connected=true
+  supportedProtocols=[test]
+  serviceOverrides=<none>
+}
+
+INFO  2018-08-21 13:55:29,115 [Time-limited test] org.mule.tck.testmodels.mule.TestConnector: Starting: TestConnector
+{
+  name=testConnector
+  lifecycle=initialise
+  this=3460855e
+  numberOfConcurrentTransactedReceivers=4
+  createMultipleTransactedReceivers=true
+  connected=true
+  supportedProtocols=[test]
+  serviceOverrides=<none>
+}
+
+INFO  2018-08-21 13:55:29,115 [Time-limited test] org.mule.lifecycle.AbstractLifecycleManager: Starting connector: testConnector
+INFO  2018-08-21 13:55:29,268 [Time-limited test] org.mule.transport.service.DefaultTransportServiceDescriptor: Loading default outbound transformer: org.mule.transport.jms.transformers.ObjectToJMSMessage
+INFO  2018-08-21 13:55:29,268 [Time-limited test] org.mule.transport.service.DefaultTransportServiceDescriptor: Loading default response transformer: org.mule.transport.jms.transformers.ObjectToJMSMessage
+WARN  2018-08-21 13:55:29,269 [Time-limited test] com.mulesoft.mule.transport.jms.EeJmsMessageDispatcher: Starting patched JmsMessageReceiver
+INFO  2018-08-21 13:55:29,270 [Time-limited test] org.mule.lifecycle.AbstractLifecycleManager: Initialising: 'Active_MQ.dispatcher.871489699'. Object is: EeJmsMessageDispatcher
+INFO  2018-08-21 13:55:29,270 [Time-limited test] org.mule.lifecycle.AbstractLifecycleManager: Starting: 'Active_MQ.dispatcher.871489699'. Object is: EeJmsMessageDispatcher
+INFO  2018-08-21 13:55:29,294 [Time-limited test] org.mule.construct.FlowConstructLifecycleManager: Stopping flow: mavenFlow
+INFO  2018-08-21 13:55:29,294 [Time-limited test] org.mule.processor.SedaStageLifecycleManager: Stopping service: mavenFlow.stage1
+INFO  2018-08-21 13:55:29,335 [maven-projectFlow.stage1.02] org.mule.api.processor.LoggerMessageProcessor: 
+org.mule.DefaultMuleMessage
+{
+  id=6407da00-a56b-11e8-940a-f8633f3fa934
+  payload=java.lang.String
+  correlationId=63ea18d1-a56b-11e8-940a-f8633f3fa934
+  correlationGroup=-1
+  correlationSeq=-1
+  encoding=UTF-8
+  exceptionPayload=<not set>
+
+Message properties:
+  INVOCATION scoped properties:
+  INBOUND scoped properties:
+    JMSCorrelationID=63ea18d1-a56b-11e8-940a-f8633f3fa934
+    JMSDeliveryMode=1
+    JMSDestination=queue://flights
+    JMSExpiration=0
+    JMSMessageID=ID:CAGMAW170605-59231-1534874126825-7:1:6:1:1
+    JMSPriority=4
+    JMSRedelivered=false
+    JMSTimestamp=1534874129290
+    MULE_CORRELATION_ID=63ea18d1-a56b-11e8-940a-f8633f3fa934
+    MULE_ENDPOINT=jms://flights
+    MULE_MESSAGE_ID=ID:CAGMAW170605-59231-1534874126825-7:1:6:1:1
+    MULE_ORIGINATING_ENDPOINT=endpoint.jms.flights
+    MULE_SESSION=rO0ABXNyACNvcmcubXVsZS5zZXNzaW9uLkRlZmF1bHRNdWxlU2Vzc2lvbi7rdtEW7GGKAwAFWgAFdmFsaWRMAA1mbG93Q29uc3RydWN0dAAmTG9yZy9tdWxlL2FwaS9jb25zdHJ1Y3QvRmxvd0NvbnN0cnVjdDtMAAJpZHQAEkxqYXZhL2xhbmcvU3RyaW5nO0wACnByb3BlcnRpZXN0AA9MamF2YS91dGlsL01hcDtMAA9zZWN1cml0eUNvbnRleHR0ACdMb3JnL211bGUvYXBpL3NlY3VyaXR5L1NlY3VyaXR5Q29udGV4dDt4cAFwdAAkNjNlYTE4ZDAtYTU2Yi0xMWU4LTk0MGEtZjg2MzNmM2ZhOTM0c3IAJWphdmEudXRpbC5Db2xsZWN0aW9ucyRTeW5jaHJvbml6ZWRNYXAbc/kJS0s5ewMAAkwAAW1xAH4AA0wABW11dGV4dAASTGphdmEvbGFuZy9PYmplY3Q7eHBzcgAkb3JnLm11bGUudXRpbC5DYXNlSW5zZW5zaXRpdmVIYXNoTWFwndHZ72dFzgADAAB4cHcMP0AAAAAAABAAAAAAeHEAfgAJeHB4
+  OUTBOUND scoped properties:
+  SESSION scoped properties:
+}
+INFO  2018-08-21 13:55:29,427 [Time-limited test] org.mule.construct.FlowConstructLifecycleManager: Stopping flow: retrieveFlights
+INFO  2018-08-21 13:55:29,427 [Time-limited test] org.mule.processor.SedaStageLifecycleManager: Stopping service: retrieveFlights.stage1
+INFO  2018-08-21 13:55:29,626 [Time-limited test] org.mule.construct.FlowConstructLifecycleManager: Stopping flow: maven-projectFlow
+INFO  2018-08-21 13:55:29,626 [Time-limited test] org.mule.transport.jms.activemq.ActiveMQJmsConnector: Removing listener on endpointUri: jms://flights
+INFO  2018-08-21 13:55:29,627 [Time-limited test] org.mule.lifecycle.AbstractLifecycleManager: Stopping: 'null'. Object is: MultiConsumerJmsMessageReceiver
+INFO  2018-08-21 13:55:29,628 [Time-limited test] org.mule.lifecycle.AbstractLifecycleManager: Disposing: 'null'. Object is: MultiConsumerJmsMessageReceiver
+INFO  2018-08-21 13:55:29,629 [Time-limited test] org.mule.processor.SedaStageLifecycleManager: Stopping service: maven-projectFlow.stage1
+INFO  2018-08-21 13:55:29,731 [Time-limited test] org.mule.service.ServiceLifecycleManager: Stopping service: appleService
+INFO  2018-08-21 13:55:29,731 [Time-limited test] org.mule.processor.SedaStageLifecycleManager: Stopping service: appleService
+INFO  2018-08-21 13:55:29,909 [Time-limited test] org.mule.component.ComponentLifecycleManager: Stopping component: component.103699788
+INFO  2018-08-21 13:55:29,913 [Time-limited test] org.mule.lifecycle.AbstractLifecycleManager: Stopping model: _muleSystemModel
+INFO  2018-08-21 13:55:29,916 [Time-limited test] org.mule.lifecycle.AbstractLifecycleManager: Stopping connector: Active_MQ
+INFO  2018-08-21 13:55:29,920 [Time-limited test] org.mule.lifecycle.AbstractLifecycleManager: Stopping: 'Active_MQ.dispatcher.871489699'. Object is: EeJmsMessageDispatcher
+INFO  2018-08-21 13:55:29,920 [Time-limited test] org.mule.lifecycle.AbstractLifecycleManager: Disposing: 'Active_MQ.dispatcher.871489699'. Object is: EeJmsMessageDispatcher
+INFO  2018-08-21 13:55:29,923 [Time-limited test] org.mule.module.http.internal.listener.DefaultHttpListenerConfig: Stopped listener on http://0.0.0.0:8082
+INFO  2018-08-21 13:55:29,926 [Time-limited test] org.mule.util.queue.QueueXaResourceManager: Stopping ResourceManager
+INFO  2018-08-21 13:55:29,926 [Time-limited test] org.mule.util.queue.QueueXaResourceManager: Stopped ResourceManager
+INFO  2018-08-21 13:55:29,931 [Time-limited test] org.mule.lifecycle.AbstractLifecycleManager: Disposing RegistryBroker
+INFO  2018-08-21 13:55:29,933 [Time-limited test] org.mule.construct.FlowConstructLifecycleManager: Disposing flow: mavenFlow
+INFO  2018-08-21 13:55:29,933 [Time-limited test] org.mule.processor.SedaStageLifecycleManager: Disposing service: mavenFlow.stage1
+INFO  2018-08-21 13:55:29,934 [Time-limited test] org.mule.construct.FlowConstructLifecycleManager: Disposing flow: retrieveFlights
+INFO  2018-08-21 13:55:29,934 [Time-limited test] org.mule.processor.SedaStageLifecycleManager: Disposing service: retrieveFlights.stage1
+INFO  2018-08-21 13:55:29,934 [Time-limited test] org.mule.construct.FlowConstructLifecycleManager: Disposing flow: maven-projectFlow
+INFO  2018-08-21 13:55:29,935 [Time-limited test] org.mule.processor.SedaStageLifecycleManager: Disposing service: maven-projectFlow.stage1
+INFO  2018-08-21 13:55:29,935 [Time-limited test] org.mule.service.ServiceLifecycleManager: Disposing service: appleService
+INFO  2018-08-21 13:55:29,935 [Time-limited test] org.mule.component.ComponentLifecycleManager: Disposing component: component.103699788
+INFO  2018-08-21 13:55:29,935 [Time-limited test] org.mule.processor.SedaStageLifecycleManager: Disposing service: appleService
+INFO  2018-08-21 13:55:29,938 [Time-limited test] org.mule.lifecycle.AbstractLifecycleManager: Disposing model: _muleSystemModel
+INFO  2018-08-21 13:55:29,978 [Time-limited test] org.mule.transport.jms.activemq.ActiveMQJmsConnector: Disconnected: ActiveMQJmsConnector
+{
+  name=Active_MQ
+  lifecycle=stop
+  this=4e4ef2ec
+  numberOfConcurrentTransactedReceivers=4
+  createMultipleTransactedReceivers=true
+  connected=true
+  supportedProtocols=[jms]
+  serviceOverrides=<none>
+}
+
+INFO  2018-08-21 13:55:29,978 [Time-limited test] org.mule.lifecycle.AbstractLifecycleManager: Disposing connector: Active_MQ
+INFO  2018-08-21 13:55:29,990 [Time-limited test] org.mule.config.spring.MuleArtifactContext: Closing org.mule.config.spring.MuleArtifactContext@434218e4: startup date [Tue Aug 21 13:55:28 EDT 2018]; root of context hierarchy
+INFO  2018-08-21 13:55:29,994 [Time-limited test] org.mule.DefaultMuleContext: 
+**********************************************************************
+* Mule Context shut down normally on: 8/21/18 1:55 PM                *
+* Server was up for: 0 days, 0 hours, 0 mins, 1.135 sec              *
+**********************************************************************
+]]></system-out>
+  </testcase>
 </testsuite>
