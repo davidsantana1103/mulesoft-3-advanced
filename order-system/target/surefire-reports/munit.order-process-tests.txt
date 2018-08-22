@@ -1,7 +1,0 @@
-SUCCESS - Test processOrders_internationalKeyReturnsInternationalOrders finished Successfully.
-SUCCESS - Test processOrders_domesticKeyReturnsDomesticOrders finished Successfully.
-SUCCESS - Test processOrders_returns2ElementMap finished Successfully.
-
-=============================================================================
-Tests run: 3 - Failures: 0 - Errors: 0 - Skipped: 0 - Time elapsed: 2.572 sec
-=============================================================================
