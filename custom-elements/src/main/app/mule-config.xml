@@ -48,6 +48,9 @@ payload]]></dw:set-payload>
         <component  doc:name="Java MuleComponent ">
             <singleton-object class="com.mulesoft.training.MuleComponent"/>
         </component>
+        <component doc:name="Call Lyfecycle">
+            <singleton-object class="com.mulesoft.training.MuleLifecycleComponent"/>
+        </component>
   </flow>
 
 </mule>
