@@ -8,6 +8,12 @@ import org.mule.api.annotations.param.InboundHeaders;
 import org.mule.api.annotations.param.Payload;
 
 public class MuleComponent {
+	
+	int count;
+	
+	public MuleComponent() {
+		count=1;
+	}
 
 	public Map<String, String> processMap(Map<String, String> input) {
 		input.put("processedBy", "processMap");
@@ -28,11 +34,13 @@ public class MuleComponent {
 		return output;
 	}
 	
-	public Map<String, String> processAll(@Payload Object input, @InboundHeaders("http.method") String method) {
-		Map<String, String> output = new HashMap<>();
+	public Map<String, Object> processAll(@Payload Object input, @InboundHeaders("http.method") String method) {
+		Map<String, Object> output = new HashMap<>();
 		output.put("message", input.toString());
 		output.put("http.method", method);
 		output.put("processedBy","processAll");
+		output.put("currentCount",this.count+"");
+		this.count ++;
 		return output;
 	}
 	

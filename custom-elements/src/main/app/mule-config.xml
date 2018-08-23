@@ -45,7 +45,9 @@ payload]]></dw:set-payload>
   </flow>
 
   <flow name="componentExample">
-        <component class="com.mulesoft.training.MuleComponent" doc:name="Java MuleComponent "/>
+        <component  doc:name="Java MuleComponent ">
+            <singleton-object class="com.mulesoft.training.MuleComponent"/>
+        </component>
   </flow>
 
 </mule>
