@@ -20,6 +20,12 @@ public class EnricherAuctionComponent {
         return enrichedBids;
     }
     
+    /**
+     * Generate random values for each bid
+     * @param bid
+     * @return
+     * @throws InterruptedException
+     */
     private String enrichSingle(String bid) throws InterruptedException{
     	Random randomGenerator = new Random();
         String name;
@@ -42,6 +48,12 @@ public class EnricherAuctionComponent {
         return bid;
         
     }
+    /**
+     * Split bids into an array and call the enricher methods, so that it can generate names and emails to each bid
+     * @param bids
+     * @return
+     * @throws InterruptedException
+     */
     public Object enrichBids(String bids) throws InterruptedException {
         String bidsArray[] = bids.split("\\r?\\n");
         

@@ -4,6 +4,11 @@ import java.util.List;
 
 public class HighestBidderAuctionComponent {
 
+	/**
+	 * find the winner bid (max)
+	 * @param bids
+	 * @return
+	 */
     public String getHighestBidder(List<String> bids) {
         int highestBid = 0;
         String highestBidder = "";
